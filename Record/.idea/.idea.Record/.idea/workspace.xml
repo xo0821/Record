@@ -26,7 +26,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.Record">
+  <component name="RunManager" selected=".NET Project.RandomMap">
     <configuration name="RandomMap" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -72,7 +72,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635132796025</updated>
-      <workItem from="1635132808253" duration="464000" />
+      <workItem from="1635132808253" duration="1430000" />
+      <workItem from="1635207153274" duration="2988000" />
+      <workItem from="1635219334831" duration="6406000" />
     </task>
     <servers />
   </component>
