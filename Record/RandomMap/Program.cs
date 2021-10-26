@@ -9,30 +9,64 @@ namespace RandomMap
     {
         static void Main(string[] args)
         {
-            ArrayOperate.DrawArry(ArrayOperate.CteatArray(4, 4,"0000001000101110"));
+            bool b = false;
+            int[,] a = ArrayOperate.CteatArray(4, 4, "0000001000101110");
+            ArrayOperate.DrawArry(a);
+            Console.WriteLine("..........................");
+            // ArrayOperate.floodfill(1,1,4,4,a);
+            // Console.WriteLine("..........................");
+            // ArrayOperate.DrawArry(a);
+            // Console.WriteLine(b.ToString());
             Console.ReadLine();
         }
     }
     
         public static partial class ArrayOperate
     {
-        public  static bool fill()
+        public static bool floodfill(int start_x,int start_y,int target_x,int target_y,int[,] arrayInts)
         {
             Vector2 v = new Vector2();
+           return floodfill(start_x,start_y,target_x,target_y,arrayInts,out v);
+        }
 
-            return true;
+        public  static bool floodfill(int start_x,int start_y,int target_x,int target_y,int[,] arrayInts, out Vector2 vector2)
+        {
+            Queue<int> queue = new Queue<int>();
+            queue.Enqueue(start_x);
+            queue.Enqueue(start_y);
+            while (queue.Count !=0)
+            {
+                int x,y;
+                x = queue.Dequeue();
+                y = queue.Dequeue();
+                if (arrayInts[x,y] ==arrayInts[target_x,target_y])
+                {
+                    vector2.X = x;
+                    vector2.Y = y;
+                    return true;
+                }
+                else
+                {
+                    if (arrayInts[x,y+1] == arrayInts[start_x,start_y]&&inArea(arrayInts,x,y+1)){queue.Enqueue(x);queue.Enqueue(y+1);}
+                    if (arrayInts[x,y-1] == arrayInts[start_x,start_y]&&inArea(arrayInts,x,y-1)){queue.Enqueue(x);queue.Enqueue(y-1);}
+                    if (arrayInts[x+1,y] == arrayInts[start_x,start_y]&&inArea(arrayInts,x+1,y)){queue.Enqueue(x+1);queue.Enqueue(y);}
+                    if (arrayInts[x-1,y] == arrayInts[start_x,start_y]&&inArea(arrayInts,x-1,y)){queue.Enqueue(x-1);queue.Enqueue(y);}
+                }
+            }
+            vector2 = Vector2.Zero;
+            return false;
         }
         
-        public static Boolean inArea(int[,]image, int x, int y){
-            return x>=0&&x<image.Length&&y>=0&&y<image.GetLength(0);
+        public static Boolean inArea(int[,]arrayInts, int x, int y){
+            return x>=0&&x<arrayInts.Length&&y>=0&&y<arrayInts.GetLength(0);
         }
-        public static void DrawArry(int[,] a)
+        public static void DrawArry(int[,] arrayInts)
         {
-            for (int i = 0; i < a.Length; i++)
+            for (int i = 0; i < arrayInts.Length; i++)
             {
-                for (int j = 0; j < a.GetLength(1); j++)
+                for (int j = 0; j < arrayInts.GetLength(1); j++)
                 {
-                    Console.Write(a[i,j]);
+                    Console.Write(arrayInts[i,j]);
                 }
                 Console.WriteLine();
             }

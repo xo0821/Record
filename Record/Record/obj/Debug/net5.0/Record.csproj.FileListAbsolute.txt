@@ -1,0 +1,16 @@
+D:\xo\XO_github\Record\Record\Record\bin\Debug\net5.0\Record.exe
+D:\xo\XO_github\Record\Record\Record\bin\Debug\net5.0\Record.deps.json
+D:\xo\XO_github\Record\Record\Record\bin\Debug\net5.0\Record.runtimeconfig.json
+D:\xo\XO_github\Record\Record\Record\bin\Debug\net5.0\Record.runtimeconfig.dev.json
+D:\xo\XO_github\Record\Record\Record\bin\Debug\net5.0\Record.dll
+D:\xo\XO_github\Record\Record\Record\bin\Debug\net5.0\ref\Record.dll
+D:\xo\XO_github\Record\Record\Record\bin\Debug\net5.0\Record.pdb
+D:\xo\XO_github\Record\Record\Record\obj\Debug\net5.0\Record.csproj.AssemblyReference.cache
+D:\xo\XO_github\Record\Record\Record\obj\Debug\net5.0\Record.GeneratedMSBuildEditorConfig.editorconfig
+D:\xo\XO_github\Record\Record\Record\obj\Debug\net5.0\Record.AssemblyInfoInputs.cache
+D:\xo\XO_github\Record\Record\Record\obj\Debug\net5.0\Record.AssemblyInfo.cs
+D:\xo\XO_github\Record\Record\Record\obj\Debug\net5.0\Record.csproj.CoreCompileInputs.cache
+D:\xo\XO_github\Record\Record\Record\obj\Debug\net5.0\Record.dll
+D:\xo\XO_github\Record\Record\Record\obj\Debug\net5.0\ref\Record.dll
+D:\xo\XO_github\Record\Record\Record\obj\Debug\net5.0\Record.pdb
+D:\xo\XO_github\Record\Record\Record\obj\Debug\net5.0\Record.genruntimeconfig.cache
