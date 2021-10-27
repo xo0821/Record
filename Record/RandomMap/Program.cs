@@ -11,9 +11,10 @@ namespace RandomMap
         {
             bool b = false;
             int[,] a = ArrayOperate.CteatArray(4, 4, "0000001000101110");
+            Vector2 v;
             ArrayOperate.DrawArry(a);
             Console.WriteLine("..........................");
-            Console.WriteLine(ArrayOperate.floodfill(0,0,3,3,a));
+            Console.WriteLine(ArrayOperate.floodfill(1,1,2,3, a));
             Console.WriteLine("..........................");
             ArrayOperate.DrawArry(a);
             Console.ReadLine();
@@ -25,20 +26,20 @@ namespace RandomMap
         public static bool floodfill(int start_x,int start_y,int target_x,int target_y,int[,] arrayInts)
         {
             Vector2 v = new Vector2();
-           return floodfill(start_x,start_y,target_x,target_y,arrayInts,out v);
+           return floodfill(start_x,start_y,target_x,target_y, arrayInts,out v);
         }
 
-        public  static bool floodfill(int start_x,int start_y,int target_x,int target_y,int[,] arrayInts, out Vector2 vector2)
+        public  static bool floodfill(int start_x,int start_y,int target_x,int target_y, int[,] arrayInts, out Vector2 vector2)
         {
             Queue<int> queue = new Queue<int>();
             queue.Enqueue(start_x);
             queue.Enqueue(start_y);
-            while (queue.Count ==0)
+            while (queue.Count >0)
             {
                 int x,y;
                 x = queue.Dequeue();
                 y = queue.Dequeue();
-                if (arrayInts[x,y] ==arrayInts[target_x,target_y])
+                if (x ==target_x&&y ==target_y)
                 {
                     vector2.X = x;
                     vector2.Y = y;
@@ -46,10 +47,11 @@ namespace RandomMap
                 }
                 else
                 {
-                    if (arrayInts[x,y+1] == 0&&inArea(arrayInts,x,y+1)){queue.Enqueue(x);queue.Enqueue(y+1);}
-                    if (arrayInts[x,y-1] == 0&&inArea(arrayInts,x,y-1)){queue.Enqueue(x);queue.Enqueue(y-1);}
-                    if (arrayInts[x+1,y] == 0&&inArea(arrayInts,x+1,y)){queue.Enqueue(x+1);queue.Enqueue(y);}
-                    if (arrayInts[x-1,y] == 0&&inArea(arrayInts,x-1,y)){queue.Enqueue(x-1);queue.Enqueue(y);}
+                    if (arrayInts[x,y] == 0)arrayInts[x, y] = 2;
+                    if (inArea(arrayInts,x,y+1)&&arrayInts[x,y+1] == 0){queue.Enqueue(x);queue.Enqueue(y+1);}
+                    if (inArea(arrayInts,x,y-1)&&arrayInts[x,y-1] == 0){queue.Enqueue(x);queue.Enqueue(y-1);}
+                    if (inArea(arrayInts,x+1,y)&&arrayInts[x+1,y] == 0){queue.Enqueue(x+1);queue.Enqueue(y);}
+                    if (inArea(arrayInts,x-1,y)&&arrayInts[x-1,y] == 0){queue.Enqueue(x-1);queue.Enqueue(y);}
                 }
             }
             vector2 = Vector2.Zero;
