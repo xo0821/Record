@@ -4,6 +4,7 @@
     <projectFile>Record/Record.csproj</projectFile>
     <projectFile>RandomMap/RandomMap.csproj</projectFile>
     <projectFile>ExcelTest/ExcelTest.csproj</projectFile>
+    <projectFile>SystemIOTest/SystemIOTest.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2deadebf-5f11-41af-9ac9-fa099244bb06" name="Changes" comment="" />
@@ -27,7 +28,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.ExcelTest">
+  <component name="RunManager" selected=".NET Project.SystemIOTest">
     <configuration name="ExcelTest" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -82,6 +83,24 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="SystemIOTest" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/SystemIOTest/SystemIOTest.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,7 +119,9 @@
       <workItem from="1637712119967" duration="601000" />
       <workItem from="1638253855672" duration="563000" />
       <workItem from="1638254646535" duration="3946000" />
-      <workItem from="1638413185883" duration="3067000" />
+      <workItem from="1638413185883" duration="4393000" />
+      <workItem from="1639527714844" duration="6855000" />
+      <workItem from="1639547904371" duration="5193000" />
     </task>
     <servers />
   </component>

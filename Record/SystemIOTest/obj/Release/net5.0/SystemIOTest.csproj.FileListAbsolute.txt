@@ -1,0 +1,16 @@
+D:\xo\XO_github\Record\Record\SystemIOTest\bin\Release\net5.0\SystemIOTest.exe
+D:\xo\XO_github\Record\Record\SystemIOTest\bin\Release\net5.0\SystemIOTest.deps.json
+D:\xo\XO_github\Record\Record\SystemIOTest\bin\Release\net5.0\SystemIOTest.runtimeconfig.json
+D:\xo\XO_github\Record\Record\SystemIOTest\bin\Release\net5.0\SystemIOTest.runtimeconfig.dev.json
+D:\xo\XO_github\Record\Record\SystemIOTest\bin\Release\net5.0\SystemIOTest.dll
+D:\xo\XO_github\Record\Record\SystemIOTest\bin\Release\net5.0\ref\SystemIOTest.dll
+D:\xo\XO_github\Record\Record\SystemIOTest\bin\Release\net5.0\SystemIOTest.pdb
+D:\xo\XO_github\Record\Record\SystemIOTest\obj\Release\net5.0\SystemIOTest.csproj.AssemblyReference.cache
+D:\xo\XO_github\Record\Record\SystemIOTest\obj\Release\net5.0\SystemIOTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\xo\XO_github\Record\Record\SystemIOTest\obj\Release\net5.0\SystemIOTest.AssemblyInfoInputs.cache
+D:\xo\XO_github\Record\Record\SystemIOTest\obj\Release\net5.0\SystemIOTest.AssemblyInfo.cs
+D:\xo\XO_github\Record\Record\SystemIOTest\obj\Release\net5.0\SystemIOTest.csproj.CoreCompileInputs.cache
+D:\xo\XO_github\Record\Record\SystemIOTest\obj\Release\net5.0\SystemIOTest.dll
+D:\xo\XO_github\Record\Record\SystemIOTest\obj\Release\net5.0\ref\SystemIOTest.dll
+D:\xo\XO_github\Record\Record\SystemIOTest\obj\Release\net5.0\SystemIOTest.pdb
+D:\xo\XO_github\Record\Record\SystemIOTest\obj\Release\net5.0\SystemIOTest.genruntimeconfig.cache

@@ -12,8 +12,8 @@ namespace ExcelTest
     {
         static void Main(string[] args)
         {
-            ReadExcel();
-            
+            //ReadExcel();
+            DatatableTest();
         }
 
         static void DatatableTest()
@@ -21,8 +21,15 @@ namespace ExcelTest
             DataTable dtTable = new DataTable();
             List<string> rowList = new List<string>();
             List<string> colList = new List<string>(){"A","B","C"};
-            
+            for (int i = 0; i < colList.Count; i++)
+            {
+                dtTable.Columns.Add(colList[i]);
+            }
 
+            foreach (var VARIABLE in dtTable.Columns)
+            {
+                Console.WriteLine(""+VARIABLE);
+            }
         }
 
         
