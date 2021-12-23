@@ -12,28 +12,31 @@ namespace SystemIOTest
         private static string dir = @"D:\xo\XO_github\TestData";
         static void Main(string[] args)
         {
-            GetDataTest();
-            //Creat();
-            files.Clear();
+            Console.WriteLine("請輸入資料夾地址");
+            dir = Console.ReadLine();
+            GetAndChangeFileName();
+            Console.WriteLine("已更改完成");
+            Console.WriteLine("如果科室(中心、隊)有同名的重複附件，請檢察那個科室的編號順序，按任意鍵結束");
             Console.ReadLine();
+            Console.ReadKey();
         }
-
-        static void GetDataTest()
+        static void GetAndChangeFileName()
         {
             string line;
             string WorkReportStr =dir+"\\"+"WorkReport.txt" ;
             string dk = "";
             DirectoryInfo directoryInfo = new DirectoryInfo(@dir);
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
+            int count = 0;
             foreach (var fi in directoryInfo.GetFiles())
             {
-                if (fi.Name.Contains("html"))
+                if (fi.Name.Contains("WorkReport.html"))
                 {
                     StreamReader streamReader = new StreamReader(dir+"\\"+fi.Name);
                     line = streamReader.ReadLine();
                     
                     while (line != null)
                     {
-                        //Console.WriteLine(line);
                         if (line.Contains("工作報告"))
                         {
                             if (line.Contains("規劃科")) dk = DK.規劃科.ToString();
@@ -47,23 +50,42 @@ namespace SystemIOTest
                             if (line.Contains("秘書室")) dk = DK.秘書室.ToString();
                             if (line.Contains("新聞聯絡人")) dk = DK.新聞聯絡人.ToString();
                         }
-                        if (line.Contains(".pdf"))
+                        
+                        if (line.Contains("target")&&line.Contains(".pdf"))
                         {
-                            Console.WriteLine(dk);
-                            //Console.WriteLine(line);
-                            GetFileAndChangeName(line,dk); //取得及更改檔案名稱
+                            string targetStr = "";
+                            bool Istarget = false;
+                            foreach (var li in line.Split("\""))
+                            {
+                                if (li.Contains("target"))
+                                {
+                                    dictionary.TryAdd(targetStr, dk);
+                                }
+                                targetStr = li;
+                            } 
                         }
+
                         line = streamReader.ReadLine();
                     }
+
+                    foreach (var di in dictionary)
+                    {
+                        ChangeName(di.Key,di.Value);
+                        //Console.WriteLine(di.Key+":"+di.Value);//模擬資料操作
+                        count++;
+                    }
+
+                    Console.WriteLine(count);
                     streamReader.Close();
                 }
             }
         }
-        static string dkCheck;
+        
+        static string dkCheck = "";
         private static int dkCount;
-        static void GetFileAndChangeName(string line,string dk)
+        static void ChangeName(string fileName,string dk)
         {
-            if (dkCheck == null ||dkCheck !=dk)
+            if (dkCheck !=dk)
             {
                 dkCount = 1;
                 dkCheck = dk;
@@ -72,9 +94,7 @@ namespace SystemIOTest
             {
                 dkCount++;
             }
-
-            string[] fi = line.Split("\"");
-            string old =dir+"\\"+ fi[1];
+            string old = dir + "\\" + fileName;
             string dk2NumberStr = "";
             switch (dk)
             {
@@ -94,13 +114,13 @@ namespace SystemIOTest
                     dk2NumberStr = "6-5-"+dkCount+"-";
                     break;
                 case "人事室":
-                    dk2NumberStr = "6-6-"+dkCount+"-";
-                    break;
-                case "政風室":
                     dk2NumberStr = "6-7-"+dkCount+"-";
                     break;
-                case "會計室":
+                case "政風室":
                     dk2NumberStr = "6-8-"+dkCount+"-";
+                    break;
+                case "會計室":
+                    dk2NumberStr = "6-6-"+dkCount+"-";
                     break;
                 case "秘書室":
                     dk2NumberStr = "6-9-"+dkCount+"-";
@@ -109,23 +129,14 @@ namespace SystemIOTest
                     dk2NumberStr = "";
                     break;
             }
-            
-            string target =dir+"\\"+dk2NumberStr+ fi[1].Remove(0,7);
-            Console.WriteLine(old);
-            Console.WriteLine(target);
+
+            string target = dir+"\\"+
+                dk2NumberStr +fileName.Remove(0,7); //fi[1].Remove(0,7);
+            //Console.WriteLine(old);
+            //Console.WriteLine(target);
             File.Move(old,target);
             //File.Delete(old);
         }
-        static void Creat()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                string filedi = dir +"\\"+i+".txt";
-                files.Add(filedi);
-                File.WriteAllText(@filedi,i.ToString());
-            }
-        }
-
         enum DK
         {
             規劃科,

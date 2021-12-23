@@ -5,6 +5,7 @@
     <projectFile>RandomMap/RandomMap.csproj</projectFile>
     <projectFile>ExcelTest/ExcelTest.csproj</projectFile>
     <projectFile>SystemIOTest/SystemIOTest.csproj</projectFile>
+    <projectFile>HttpTest/HttpTest.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2deadebf-5f11-41af-9ac9-fa099244bb06" name="Changes" comment="" />
@@ -38,6 +39,24 @@
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/ExcelTest/ExcelTest.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="HttpTest" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/HttpTest/HttpTest.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -122,6 +141,17 @@
       <workItem from="1638413185883" duration="4393000" />
       <workItem from="1639527714844" duration="6855000" />
       <workItem from="1639547904371" duration="5193000" />
+      <workItem from="1639553712191" duration="639000" />
+      <workItem from="1639557458489" duration="84000" />
+      <workItem from="1639624930641" duration="1098000" />
+      <workItem from="1639699271392" duration="759000" />
+      <workItem from="1639719640901" duration="201000" />
+      <workItem from="1639723055617" duration="3651000" />
+      <workItem from="1640142118548" duration="1956000" />
+      <workItem from="1640155870802" duration="676000" />
+      <workItem from="1640218842194" duration="5811000" />
+      <workItem from="1640237657571" duration="1279000" />
+      <workItem from="1640250315629" duration="229000" />
     </task>
     <servers />
   </component>

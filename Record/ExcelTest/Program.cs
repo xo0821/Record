@@ -39,6 +39,7 @@ namespace ExcelTest
             List<string> rowList = new List<string>();
             ISheet sheet;
             using (var stream = new FileStream("TestData.xlsx", FileMode.Open))//根據路徑取得FileStream
+            //剛好最近看到順便紀錄，在using裡面創造的物件生命會在{}結束(呼叫IDisposable)終止
             {
                 stream.Position = 0;
                 XSSFWorkbook xssWorkbook = new XSSFWorkbook(stream);//取得檔案內的工作簿
