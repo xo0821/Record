@@ -14,16 +14,21 @@ namespace SystemIOTest
         {
             Console.WriteLine("請輸入資料夾地址");
             dir = Console.ReadLine();
-            GetAndChangeFileName();
-            Console.WriteLine("已更改完成");
-            Console.WriteLine("如果科室(中心、隊)有同名的重複附件，請檢察那個科室的編號順序，按任意鍵結束");
+            if (dir !=null)
+            {
+                GetAndChangeFileName();
+                Console.WriteLine("已更改完成");
+                Console.WriteLine("如果科室(中心、隊)有同名的重複附件，請檢察那個科室(中心、隊)的編號順序，" +
+                                  "阿如果本來順序就不是附件123456這樣排下來自己看要不要調(例如我現在遇到的會計室附件" +
+                                  ")，我是覺得調成他已經編好的順序比較順眼所以我會手動重排一下，" +
+                                  "沒改也不算錯，因為照網頁順序由上而下就是程式跑出來這樣，按任意鍵結束");
+            }
             Console.ReadLine();
             Console.ReadKey();
         }
         static void GetAndChangeFileName()
         {
             string line;
-            string WorkReportStr =dir+"\\"+"WorkReport.txt" ;
             string dk = "";
             DirectoryInfo directoryInfo = new DirectoryInfo(@dir);
             Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -49,6 +54,8 @@ namespace SystemIOTest
                             if (line.Contains("會計室")) dk = DK.會計室.ToString();
                             if (line.Contains("秘書室")) dk = DK.秘書室.ToString();
                             if (line.Contains("新聞聯絡人")) dk = DK.新聞聯絡人.ToString();
+                            if (line.Contains("府會聯絡員")) dk = DK.府會聯絡員.ToString();
+                            
                         }
                         
                         if (line.Contains("target")&&line.Contains(".pdf"))
@@ -64,14 +71,12 @@ namespace SystemIOTest
                                 targetStr = li;
                             } 
                         }
-
                         line = streamReader.ReadLine();
                     }
 
                     foreach (var di in dictionary)
                     {
                         ChangeName(di.Key,di.Value);
-                        //Console.WriteLine(di.Key+":"+di.Value);//模擬資料操作
                         count++;
                     }
 
@@ -128,13 +133,27 @@ namespace SystemIOTest
                 case "新聞聯絡人":
                     dk2NumberStr = "";
                     break;
+                case "府會聯絡員":
+                    dk2NumberStr = "";
+                    break;
             }
 
             string target = dir+"\\"+
                 dk2NumberStr +fileName.Remove(0,7); //fi[1].Remove(0,7);
             //Console.WriteLine(old);
             //Console.WriteLine(target);
-            File.Move(old,target);
+
+            try
+            {
+                File.Move(old,target);
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("檔案已改名完成或檔案不存在");
+                //Console.WriteLine(e);
+                //throw;
+            }
             //File.Delete(old);
         }
         enum DK
@@ -148,7 +167,8 @@ namespace SystemIOTest
             政風室,
             會計室,
             秘書室,
-            新聞聯絡人
+            新聞聯絡人,
+            府會聯絡員
         }
 
     }
